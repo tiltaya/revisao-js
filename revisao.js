@@ -217,3 +217,34 @@
 
 // ==============================> Parte 11 - map e filter <==============================
 
+const produtos = [
+    { nome: 'Alface Lavada', categoria: 'Hortifruti', preco: 2.5 },
+    { nome: 'Guaraná 2L', categoria: 'Bebidas', preco: 7.8 },
+    { nome: 'Veja Multiuso', categoria: 'Limpeza', preco: 12.6 },
+    { nome: 'Dúzia de Banana', categoria: 'Hortifruti', preco: 5.7 },
+    { nome: 'Leite', categoria: 'Bebidas', preco: 2.99 },
+    { nome: 'Cândida', categoria: 'Limpeza', preco: 3.30 },
+    { nome: 'Detergente Ypê' , categoria: 'Limpeza', preco: 2.2 },
+    { nome: 'Vinho Tinto', categoria: 'Bebidas', preco: 55 },
+    { nome: 'Berinjela kg', categoria: 'Hortifruti', preco: 8.99 },
+    { nome: 'Sabão em pó', categoria: 'Limpeza', preco: 10.80 } ]
+
+const desconto = produtos.map((produto)=>{
+    return {...produto, preco: (produto.preco*0.9).toFixed(2)}
+})
+
+console.log(desconto);
+
+const hortifruti = produtos.filter((produto)=>{
+    return produto.categoria === 'Hortifruti'
+})
+
+console.log(hortifruti);
+
+const hortiDesc = produtos.filter((produto)=>{
+    return produto.categoria === 'Hortifruti'
+}).map((produto)=>{
+    return {...produto, preco: (produto.preco*0.9).toFixed(2)}
+})
+
+console.log(hortiDesc);
